@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Async Javascript || setInterval</h1>
+    <h5>Count <span id="count">0</span></h5>
+    </h5>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>   
+    let count = 0;
+    const displayCount = function (str) {
+        count++;
+        document.getElementById("count").innerHTML = count;
+        console.log(str, Date.now());
+    };
+
+    let intervalTime = "";
+    document.getElementById("start").addEventListener('click', function () {
+        intervalTime = setInterval(displayCount, 1000, "Hi user..");
+    });
+
+    document.getElementById("stop").addEventListener('click', function () {
+        clearInterval(intervalTime);
+    });
+</script>
+
+</html>

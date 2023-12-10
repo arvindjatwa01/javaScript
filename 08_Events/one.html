@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li>
+            <img width="200px" height="200px" style="object-fit: cover" id="nightRoad"
+                src="https://images.pexels.com/photos/205076/pexels-photo-205076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="nightRoad">
+        </li>
+        <li>
+            <img width="200px" height="200px" style="object-fit: cover" id="reiverLight"
+                src="https://images.pexels.com/photos/163776/venice-gondola-sunset-italian-163776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+        </li>
+        <li>
+            <img width="200px" height="200px" style="object-fit: cover" id="inidanBoy"
+                src="https://images.pexels.com/photos/2802368/pexels-photo-2802368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+        </li>
+        <li>
+            <img width="200px" height="200px" style="object-fit: cover" id="currency"
+                src="https://images.pexels.com/photos/4386404/pexels-photo-4386404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+        </li>
+        <li>
+            <img width="200px" height="200px" style="object-fit: cover" id="indianFort"
+                src="https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+        </li>
+        <li><a style="color: aliceblue;" href="http://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById("inidanBoy").onclick = function () {
+    //     alert("Indian Boy");
+    // }
+
+    // attachEvent
+    // jQuery - on
+    // 
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currnetTarget
+    // clicnetX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode, 
+
+
+    // document.getElementById("images").addEventListener("click", function (e) {
+    //     console.log("clicked inside the images");
+    // }, false);
+
+    // document.getElementById("inidanBoy").addEventListener("click", function (e) {
+    //     console.log("idian boy clicked");
+    //     e.stopPropagation();
+    // }, false);
+
+    // document.getElementById("google").addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    // })
+
+    document.querySelector("#images").addEventListener('click', function (e) {
+        // console.log(e.target.id)
+        console.log(e.target.tagName)
+        if (e.target.tagName === "IMG") {
+            console.log(e.target.id);
+            let removeLi = e.target.parentNode;
+            removeLi.remove();
+            // removeLi.parentNode.removeChild(removeLi);
+        }
+    }, false);
+
+</script>
+
+</html>
